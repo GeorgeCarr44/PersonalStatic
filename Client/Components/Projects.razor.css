@@ -45,7 +45,7 @@ p {
 
 @font-face {
     font-family: "Roboto";
-    src: url("~/fonts/Roboto-Black.ttf") format('truetype');
+    src: url('fonts/Roboto-Black.ttf') format('truetype');
 }
 
 
