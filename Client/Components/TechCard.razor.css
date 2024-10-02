@@ -1,0 +1,21 @@
+﻿.icon{
+    height:100px;
+    background-color: transparent;
+    margin-bottom: 20px;
+}
+
+.pad
+{
+    padding: 15px 0px;
+}
+
+.card {
+    background-color: transparent;
+    
+}
+
+p {
+    color: var(--light);
+    text-align:center;
+    font-size: 20px;
+}

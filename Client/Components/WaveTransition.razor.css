@@ -1,0 +1,11 @@
+﻿.spacer {
+    aspect-ratio: 1902/250;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.wave1 {
+    background-image: url(images/hero-layered-waves.svg);
+}

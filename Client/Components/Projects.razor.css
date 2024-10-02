@@ -1,0 +1,78 @@
+﻿.subtitle {
+    color: var(--light);
+    font-size: 22px;
+    width: 20%;
+    text-align: center;
+    align-self:center;
+}
+
+.card-container {
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    padding: 80px 0;
+}
+
+.card {
+    aspect-ratio: 414/286;
+    width: 30%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border: 0;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0px 0px 4px #000;
+    transition-duration: 0.4s;
+}
+
+    .card:hover {
+        box-shadow: inset 0px 0px 20px 1px #000;
+    }
+
+p {
+    color: var(--light);
+    font-size: 30px;
+}
+
+.overlay-text {
+    position: absolute;
+    bottom: 0;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("~/fonts/Roboto-Black.ttf") format('truetype');
+}
+
+
+.AdventOfCode h4 {
+    font-size:40px;
+    display: inline-block;
+    text-decoration: none;
+    color: #00cc00;
+    text-shadow: 0 0 4px #00cc00, 0 0 5px #00cc00;
+}
+
+.streak h4 {
+    font-family: "Roboto";
+    font-weight: 900;
+    color: #000;
+    font-size: 60px;
+}
+
+.card p {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.2s, opacity 0.2s linear;
+
+}
+
+.card:hover p {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.2s linear;
+}

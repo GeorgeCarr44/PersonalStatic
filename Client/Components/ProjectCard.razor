@@ -1,0 +1,16 @@
+<div class="card" style="background-image: url('@(Image)')">
+    <p class="overlay-text">@(Text)</p>
+</div>
+
+@code
+{
+    [Parameter]
+    public string? Image { get; set; }
+
+    [Parameter]
+    public string? URL { get; set; }
+
+    [Parameter]
+    public string? Text { get; set; }
+
+}

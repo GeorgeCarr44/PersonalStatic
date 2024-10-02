@@ -1,0 +1,82 @@
+﻿<div class="section">
+    <div class="title nats">
+        <h2 id="Experience">Experience</h2>
+    </div>
+
+    <div class="timeline">
+        @* Eploy *@
+        <div class="timeline-event">
+            <div class="timeline-heading">
+                <h3>@CalculateYearsExperience() Years of proven professional success</h3>
+                <p class="numan">Nothing is more important than practical experience.</p>
+                <p class ="numan">Bringing ideas to life.</p>
+            </div>
+            <div class="line-container top">
+                <div class="nats dot top">2024</div>
+                <div class="line" />
+            </div>
+            <div class="numan job-details top">
+                <h4 class="nats">Software Engineer | Eploy</h4>
+                <h5>October 2019 - Present</h5>
+                <p>Worked on an award-winning Applicant Tracking System and Talent CRM as part of an agile team. Developed several features in ASP, .Net, .Net Core, RestAPI. Gained experience with C# SQL, APIs, Git, Peer reviews and Scrum</p>
+            </div>
+        </div>
+
+        @* Eastside *@
+        <div class="timeline-event">
+            <div class="numan job-details">
+                <h4 class="nats">Frontend Developer | Eastside Co</h4>
+                <h5>June 2019 - October 2019</h5>
+                <p>Worked on numerous Shopify websites, including <a href="https://silqrose.com/">Silq Rose</a> and <a href="https://wardenagri.co.uk/">Warden Agri</a> implementing bespoke features that were outside the scope of the CMS. Developed skills in SASS, HTML 5, and JavaScript.</p>
+            </div>
+            <div class="line-container">
+                <div class="nats dot">2019</div>
+                <div class="line" />
+            </div>
+            <div class="spacer"/>
+        </div>
+
+        @* Netlynk Direct *@
+        <div class="timeline-event">
+            <div class="spacer" />
+            <div class="line-container">
+                <div class="nats dot">2019</div>
+                <div class="line" />
+            </div>
+            <div class="numan job-details">
+                <h4 class="nats">Developer | NetLynk Direct</h4>
+                <h5>June 2016 - June 2019</h5>
+                <p>Worked on the <a href="https://www.plus.net/mobile/">Plusnet mobile</a> and Talk Talk accessories store websites using ASP.Net MVC, as well as building a bespoke CMS for the site. Developed skills in C#, HTML, CSS, SEO, Bootstrap, SVN version control, and JavaScript.</p>
+            </div>
+        </div>
+
+        @* Wapple *@
+
+        <div class="timeline-event">
+            <div class="numan job-details">
+                <h4 class="nats">Apprentice C# Developer | Wapple</h4>
+                <h5>August 2015 – August 2016</h5>
+                <p>Learned the basics of C#, XAML, EF, and C++. Gained knowledge of Unity game engine, Microsoft Visual Studios, Windows Universal Platforms, and Windows 8.1.</p>
+            </div>
+            <div class="line-container">
+                <div class="nats dot">2019</div>
+                <div class="line gradient" />
+            </div>
+            <div class="spacer" />
+        </div>
+
+    </div>
+    <hr/>
+</div>
+
+
+@code {
+    private int yearsExperience;
+
+    private int CalculateYearsExperience()
+    {
+        return Convert.ToInt32(Math.Floor((DateTime.Now - new DateTime(2015, 08, 01)).TotalDays / 365));
+    }
+
+
+}
