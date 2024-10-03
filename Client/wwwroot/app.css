@@ -48,6 +48,7 @@ h1:focus {
 
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: var(--dark);
 }
 
 a, .btn-link {
@@ -138,19 +139,20 @@ hr {
     display: block;
     width: 8rem;
     height: 8rem;
+    color: blue;
     margin: 20vh auto 1rem auto;
 }
 
     .loading-progress circle {
         fill: none;
-        stroke: #e0e0e0;
+        stroke: var(--PinkText);
         stroke-width: 0.6rem;
         transform-origin: 50% 50%;
         transform: rotate(-90deg);
     }
 
         .loading-progress circle:last-child {
-            stroke: #1b6ec2;
+            stroke: var(--PinkText);
             stroke-dasharray: calc(3.141 * var(--blazor-load-percentage, 0%) * 0.8), 500%;
             transition: stroke-dasharray 0.05s ease-in-out;
         }
@@ -159,6 +161,7 @@ hr {
     position: absolute;
     text-align: center;
     font-weight: bold;
+    color: var(--light);
     inset: calc(20vh + 3.25rem) 0 auto 0.2rem;
 }
 
