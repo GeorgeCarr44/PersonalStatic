@@ -27,6 +27,7 @@
     justify-content: center;
     box-shadow: inset 0px 0px 4px #000;
     transition-duration: 0.4s;
+    cursor:pointer;
 }
 
     .card:hover {
@@ -64,11 +65,19 @@ p {
     font-size: 60px;
 }
 
+.personal h4 {
+    font-family: "Nats";
+    color: var(--light);
+    font-size: 50px;
+}
+
 .card p {
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s 0.2s, opacity 0.2s linear;
-
+    text-align:center;
+    padding: 0 10px;
+    margin: 0;
 }
 
 .card:hover p {
