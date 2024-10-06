@@ -1,29 +1,40 @@
 ﻿h4 {
     color: #DD3C7F;
-    font-size: 40px;
+    font-size: 50px;
+    font-family: NATS;
 }
 
 p {
-    padding: 20px 80px 20px 0;
-    font-size: 20px;
+    padding: 20px 0;
+    font-size: 28px;
+    color: var(--light);
+    font-family: 'Numan';
 }
 
 .card {
     border: 0;
     border-radius: 20px;
     box-shadow: inset 0px 0px 4px #000;
-}
-
-.interest
-{
-    display:flex;
-
-}
-
-.interest img {
     width: 100%;
+    max-width: 800px;
+    aspect-ratio: 16/9;
+    object-fit:cover;
+    margin: 0 2%;
+}
+
+.interests-container{
+    display: flex;
+    width: 80%;
+    justify-content:center;
+    flex-direction:column;
+}
+
+.interest {
+    display: flex;
+    padding: 40px 15%;
 }
 
 .info {
-
+    margin: 2%;
+    width: 100%;
 }
