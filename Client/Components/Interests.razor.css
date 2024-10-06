@@ -1,12 +1,12 @@
 ﻿h4 {
     color: #DD3C7F;
-    font-size: 50px;
+    font-size: 40px;
     font-family: NATS;
 }
 
 p {
     padding: 20px 0;
-    font-size: 28px;
+    font-size: 22px;
     color: var(--light);
     font-family: 'Numan';
 }
@@ -22,19 +22,22 @@ p {
     margin: 0 2%;
 }
 
-.interests-container{
+.interests-container {
     display: flex;
     width: 80%;
-    justify-content:center;
-    flex-direction:column;
+    max-width: 1400px;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .interest {
     display: flex;
-    padding: 40px 15%;
+    padding: 40px 0;
 }
 
 .info {
     margin: 2%;
     width: 100%;
 }
+
+
