@@ -45,6 +45,9 @@ else
         try
         {
             forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("/api/WeatherForecast") ?? new WeatherForecast[]{};
+            await Http.PostAsync("/api/SendEmail", null);
+            // Need to send some content
+            // Need to do this in the correct area
         }
         catch (Exception ex)
         {

@@ -1,13 +1,11 @@
 ﻿@using MailKit.Net.Smtp
 @using MimeKit
-@using PersonalStaticApp.Client.Models
+@using PersonalStaticApp.Shared.Models
+@inject HttpClient Http
+
 <div class="section contact">
     <div class="title nats">
         <h2 id="Contact">Get in touch</h2>
-        <p>@Environment.GetEnvironmentVariable("SMTPHost")</p>
-        <p>@Environment.GetEnvironmentVariable("SMTPUsername")</p>
-        <p>@Environment.GetEnvironmentVariable("SMTPPassword")</p>
-        <p>@Environment.GetEnvironmentVariable("SMTPSendToCSV")</p>
     </div>
     <EditForm Model="EmailRequest" FormName="EmailForm" OnSubmit="SendEmail">
         <AntiforgeryToken />
@@ -25,7 +23,8 @@
     void SendEmail()
     {
         var email = new MimeMessage();
-        var sendToCVS = Environment.GetEnvironmentVariable("SMTPSendToCSV");
+        //var sendToCVS = Environment.GetEnvironmentVariable("SMTPSendToCSV");
+        var sendToCVS = "brandon.dach79@ethereal.email";
         email.From.Add(MailboxAddress.Parse(EmailRequest.Email));
         if (String.IsNullOrEmpty(sendToCVS))
             return;
@@ -43,8 +42,10 @@
         };
 
         using var smtp = new SmtpClient();
-        smtp.Connect(Environment.GetEnvironmentVariable("SMTPHost"), 587, MailKit.Security.SecureSocketOptions.StartTls);
-        smtp.Authenticate(Environment.GetEnvironmentVariable("SMTPUsername"), Environment.GetEnvironmentVariable("SMTPPassword"));
+        // smtp.Connect(Environment.GetEnvironmentVariable("SMTPHost"), 587, MailKit.Security.SecureSocketOptions.StartTls);
+        // smtp.Authenticate(Environment.GetEnvironmentVariable("SMTPUsername"), Environment.GetEnvironmentVariable("SMTPPassword"));
+        smtp.Connect("smtp.ethereal.email", 587, MailKit.Security.SecureSocketOptions.StartTls);
+        smtp.Authenticate("brandon.dach79@ethereal.email", "Jbr9HGm5d6mYdb4vsd");
         smtp.Send(email);
         smtp.Disconnect(true);
     }

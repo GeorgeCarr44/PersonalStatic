@@ -19,6 +19,6 @@
   </ItemGroup>
 
 
-  <ProjectExtensions><VisualStudio><UserProperties personalstaticapp_1config_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
 
 </Project>
