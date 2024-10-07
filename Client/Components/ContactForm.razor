@@ -4,6 +4,10 @@
 <div class="section contact">
     <div class="title nats">
         <h2 id="Contact">Get in touch</h2>
+        <p>@Environment.GetEnvironmentVariable("SMTPHost")</p>
+        <p>@Environment.GetEnvironmentVariable("SMTPUsername")</p>
+        <p>@Environment.GetEnvironmentVariable("SMTPPassword")</p>
+        <p>@Environment.GetEnvironmentVariable("SMTPSendToCSV")</p>
     </div>
     <EditForm Model="EmailRequest" FormName="EmailForm" OnSubmit="SendEmail">
         <AntiforgeryToken />
@@ -21,19 +25,26 @@
     void SendEmail()
     {
         var email = new MimeMessage();
+        var sendToCVS = Environment.GetEnvironmentVariable("SMTPSendToCSV");
         email.From.Add(MailboxAddress.Parse(EmailRequest.Email));
-        email.To.Add(MailboxAddress.Parse("gwcgreen3@gmail.com"));
-        email.To.Add(MailboxAddress.Parse("georgecarrwork@gmail.com"));
+        if (String.IsNullOrEmpty(sendToCVS))
+            return;
 
-        email.Subject = $"Contact from {EmailRequest.Name} via TheLemic.co.uk";
+        var sentToList = sendToCVS.Split(',');
+        foreach (var sendToAddress in sentToList)
+        {
+            email.To.Add(MailboxAddress.Parse(sendToAddress));
+        }
+
+        email.Subject = $"Contact from {EmailRequest.Name} | {EmailRequest.Email} via TheLemic.co.uk";
         email.Body = new TextPart(MimeKit.Text.TextFormat.Html)
         {
             Text = EmailRequest.Body
         };
 
         using var smtp = new SmtpClient();
-        smtp.Connect("", 587, MailKit.Security.SecureSocketOptions.StartTls);
-        smtp.Authenticate("", "");
+        smtp.Connect(Environment.GetEnvironmentVariable("SMTPHost"), 587, MailKit.Security.SecureSocketOptions.StartTls);
+        smtp.Authenticate(Environment.GetEnvironmentVariable("SMTPUsername"), Environment.GetEnvironmentVariable("SMTPPassword"));
         smtp.Send(email);
         smtp.Disconnect(true);
     }
